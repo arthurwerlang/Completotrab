@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclagem São Leopoldo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Reciclagem São Leopoldo</h1>
+    <label for="material">Escolha o tipo de material:</label>
+    <select id="material">
+        <option value="Metal">Metal</option>
+        <option value="Plástico">Plástico</option>
+        <option value="Papel">Papel</option>
+        <option value="Eletrônico">Eletrônico</option>
+    </select>
+    <button onclick="fetchLocais()">Buscar Locais</button>
+    <div id="result"></div>
+    <script src="app.js"></script>
+</body>
+</html>
