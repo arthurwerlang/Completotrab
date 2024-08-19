@@ -1,7 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const materialController = require('../controllers/materialController');
+const router = require('express').Router();
 
-router.get('/locais/:material', materialController.getLocaisByMaterial);
+const { getLocais } = require("../controllers/materialController"); //require('../controllers/materialController');
+
+router.post('/locais/', getLocais);
 
 module.exports = router;
+

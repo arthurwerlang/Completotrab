@@ -1,20 +1,24 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const materialRouter = require('./routes/materialRouter');
+// Módulo de configuração da webapi, módulo de aplicação
 
+// Importar o pacote express (servidor)
+const express = require('express');
+// Responsável por lidar com requisições externas
+const cors = require('cors');
+// Importar as rotas para serem executadas na aplicação
+const router = require('./routes/materialRouter');
+// Importar o pacote dotenv, gerenciador de variáveis de ambiente
+const dotenv = require('dotenv').config();
+
+// Instanciar o express na variável app
 const app = express();
 
-app.use(cors());
+// Habilitar o recebimento de requests em formato JSON
 app.use(express.json());
-
-// Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/api', materialRouter);
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// Habilitar o recebimento de requests em formato JSON
+app.use(cors())
+// Habilitar as rotas na aplicação
+app.use('/api', router);
+// Setar a porta do servidor, a parir do arquivo .env
+app.set('port', process.env.PORT || 1903);
 
 module.exports = app;
