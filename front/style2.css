@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8f5;
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+}
+ 
+header {
+    background-color: #2f8f2e;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+ 
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+ 
+.logo-container {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+ 
+.logo-image {
+    width: 45px;
+    height: auto;
+}
+ 
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    text-align: center;
+}
+ 
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+ 
+.hero p {
+    font-size: 20px;
+    margin-bottom: 50px;
+    padding: 20px; 
+}
+ 
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.hero-content a.btn {
+    margin-bottom: 40px; /* Espaço entre os botões e o próximo bloco */
+}
+
+.hero-content a.btn:last-of-type {
+    margin-bottom: 0; /* Remove o espaço adicional após o último botão */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #2f8f2e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+ 
+.btn:hover {
+    background-color: #256f23;
+}
+ 
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+ 
+.feature-item {
+    text-align: center;
+    max-width: 300px;
+}
+ 
+.feature-item img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+ 
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2f8f2e;
+}
+ 
+.feature-item p {
+    font-size: 16px;
+    color: #666;
+}
+ 
+footer {
+    background-color: #2f8f2e;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+}
+ 
+footer p {
+    font-size: 14px;
+}
+ 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
