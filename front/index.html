@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Reciclagem São Leopoldo</h1>
-    <label for="material">Escolha o tipo de material:</label>
-    <select id="material">
-        <option value="Metal">Metal</option>
-        <option value="Plástico">Plástico</option>
-        <option value="Papel">Papel</option>
-        <option value="Eletrônico">Eletrônico</option>
-    </select>
-    <button onclick="fetchLocais(event)">Buscar Locais</button>
-    <div id="result"></div>
+    <header>
+        <h1>REECO: Transformando Resíduos em Recursos</h1>
+    </header>
+    <div class="container">
+        <label for="material">Escolha o tipo de material:</label>
+        <select id="material" class="select-material">
+            <option value="Metal">Metal</option>
+            <option value="Plástico">Plástico</option>
+            <option value="Papel">Papel</option>
+            <option value="Eletrônico">Eletrônico</option>
+        </select>
+        <button class="btn" onclick="fetchLocais(event)">Buscar Locais</button>
+        <div id="result"></div>
+        
+        <a href="index2.html" class="btn voltar-btn">Voltar para o Início</a>
+    </div>
+
+    <table id="addTable">
+        
+    </table>
     
     <script src="app.js"></script>
 </body>

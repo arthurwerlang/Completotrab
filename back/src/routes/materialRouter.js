@@ -1,6 +1,9 @@
+//O código define uma rota POST para buscar locais de descarte com `getLocais`.');
+
+
 const router = require('express').Router();
 
-const { getLocais } = require("../controllers/materialController"); //require('../controllers/materialController');
+const { getLocais } = require("../controllers/materialController");
 
 router.post('/locais/', getLocais);
 
