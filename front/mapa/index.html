@@ -4,18 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reciclagem São Leopoldo</title>
-    
-
-    <script>
-        window.addEventListener('load', function() {
-          if (typeof google !== 'undefined' && google.maps) {
-            // Inicializa o mapa com uma lista vazia de locais
-            initMap([]);
-          } else {
-            console.error("Google Maps API não foi carregada corretamente.");
-          }
-        });
-      </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2HtBxuJ5bZbISHkRT5UCM1SOA2aMsT8I&callback=initMap"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,7 +22,7 @@
         <button class="btn" onclick="fetchLocais(event)">Buscar Locais</button>
         <div id="result"></div>
        
-        <a href="index2.html" class="btn voltar-btn">Voltar para o Início</a>
+        <a href="../index2.html" class="btn voltar-btn">Voltar para o Início</a>
     </div>
  
     <table id="addTable">
@@ -42,7 +31,6 @@
  
     <div id="map"></div>
    
-    <script src="./app.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2HtBxuJ5bZbISHkRT5UCM1SOA2aMsT8I&libraries=marker&v=beta&callback=initMap"></script>
+    <script src="Main.js"></script>
 </body>
 </html>
