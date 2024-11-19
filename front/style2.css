@@ -14,7 +14,7 @@ body {
  
 header {
     background-color: #2f8f2e;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,6 +32,7 @@ header {
     top: 15px;
     right: 20px;
 }
+
  
 .logo-image {
     width: 45px;
@@ -39,6 +40,7 @@ header {
 }
  
 .hero {
+    margin-top: 50px;
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -48,7 +50,7 @@ header {
 }
  
 .hero h1 {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 20px;
 }
  
@@ -74,27 +76,6 @@ header {
 .hero-content a.btn:last-of-type {
     margin-bottom: 0; /* Remove o espaço adicional após o último botão */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .btn {
     padding: 10px 20px;

@@ -6,15 +6,20 @@ async function getLocais(request, response) {
         request.body.materialTipo
     ) 
 
-    const query = "select m.nome as material, ld.nome as local, ld.endereco " +
-        "from materiais m " +
-        "left join materiais_locais ml on m.id = ml.material_id " +
-        // Faz um LEFT JOIN com a tabela 'materiais_locais', ligando a tabela 'materiais' através de 'material_id'
-        "left join locais_descarte ld on ld.id = ml.local_id " +
-        "WHERE ld.endereco LIKE '%São Leopoldo%' And m.nome = ? " +
-        "group by ld.nome, m.nome, ld.endereco " +
-        // Agrupa os resultados por nome do local, evitar duplicação de nomes
-        "order by m.nome;";
+    const query = `
+        SELECT 
+            m.nome AS material, 
+            ld.nome AS local, 
+            ld.endereco, 
+            ld.horario, 
+            ld.imagem
+        FROM materiais m
+        LEFT JOIN materiais_locais ml ON m.id = ml.material_id
+        LEFT JOIN locais_descarte ld ON ld.id = ml.local_id
+        WHERE ld.endereco LIKE '%São Leopoldo%' AND m.nome = ?
+        GROUP BY ld.nome, m.nome, ld.endereco, ld.horario, ld.imagem
+        ORDER BY m.nome;
+    `;
     
     connection.query(query, params, (err, results) => {
         console.log(err, results)

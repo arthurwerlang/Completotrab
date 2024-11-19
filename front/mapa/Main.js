@@ -36,11 +36,17 @@ function geocodeAddress(geocoder, map, location) {
 
       // armazena o marcador no array para poder remover depois
       markers.push(marker);
-
+      console.log(location.imagem);
       // cria uma infoWindow (janela de informações) para exibir ao clicar no marcador
       const infoWindow = new google.maps.InfoWindow({
-        content: `<h4>${location.local}</h4><p>${location.endereco}</p>`
-      });
+        content: `
+          <div>
+            <h4>${location.local}</h4>
+            <p>${location.endereco}</p>
+            <p>Horário de funcionamento: ${location.horario}</p>
+            <img src="${location.imagem}" alt="${location.local}" style="width: 10vw; height: auto; margin-top: 10px;">
+          </div>
+      `})
 
       // exibe a infoWindow quando o marcador é clicado(!!aqui da pra adicionar mais informacoes!!)
       marker.addListener('click', function () {
@@ -66,6 +72,7 @@ function updateTable(list) {
     <tr>
       <td>Endereço</td>
       <td>Local</td>
+      <td>Horário</td>
       <td>Material</td>
     </tr>
   `;
@@ -75,6 +82,7 @@ function updateTable(list) {
       <tr>
         <td>${location.endereco}</td>
         <td>${location.local}</td>
+        <td>${location.horario}</td>
         <td>${location.material}</td>
       </tr>
     `;
@@ -90,7 +98,7 @@ async function fetchLocais(event) {
   let data = { materialTipo }; // cria um objeto com o tipo de material
 
   // faz  requisição POST para o servidor com o tipo de material
-  const response = await fetch('http://localhost:3006/api/locais', {
+  const response = await fetch('http://localhost:3007/api/locais', {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -102,7 +110,8 @@ async function fetchLocais(event) {
 
   if (results.success) { 
     const info = results.data; // armazena os dados retornados
-
+    
+    console.log(info)
     // limpa os marcadores atuais antes de adicionar novos
     clearMarkers();
 
